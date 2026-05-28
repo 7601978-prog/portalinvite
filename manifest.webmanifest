@@ -1,0 +1,14 @@
+{
+  "name": "Портал приглашений",
+  "short_name": "Приглашения",
+  "description": "Конструктор живых страниц-приглашений с RSVP и вишлистом",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf3ef",
+  "theme_color": "#c4736a",
+  "icons": [
+    { "src": "/icon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any maskable" }
+  ]
+}
