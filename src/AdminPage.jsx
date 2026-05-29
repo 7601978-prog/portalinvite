@@ -251,7 +251,7 @@ export default function AdminPage() {
                     <span style={{ fontSize: 14, fontWeight: 600, color: "#c4736a", whiteSpace: "nowrap" }}>{rsvp?.responses?.length || 0} 👤</span>
                   </div>
                   <div className="admin-actions">
-                    <a href={inviteUrl(inv.slug)} target="_blank" rel="noreferrer" style={iconBtnLink} title="Открыть">
+                    <a href={inviteUrl(inv.slug, inv)} target="_blank" rel="noreferrer" style={iconBtnLink} title="Открыть">
                       <ExternalLink size={14} />
                     </a>
                     <button onClick={() => onDeleteInvite(inv.slug)} style={{ ...iconBtn, color: "#c0392b" }} title="Удалить">

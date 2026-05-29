@@ -166,7 +166,7 @@ export default function InvitationPortal({ slug, initial, guestMode = false }) {
     saveInvitation(slug, { eventType, themeKey, font, blocks }, auth?.user?.email);
   }, [slug, step, eventType, themeKey, font, blocks, auth?.user?.email]);
 
-  const shareLink = slug ? inviteUrl(slug) : "";
+  const shareLink = slug ? inviteUrl(slug, { eventType, themeKey, font, blocks }) : "";
   const copyShare = async () => {
     if (!shareLink) return;
     try {

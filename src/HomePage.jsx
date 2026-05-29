@@ -32,8 +32,9 @@ export default function HomePage() {
     refresh();
   };
 
-  const copyLink = async (slug) => {
-    const url = inviteUrl(slug);
+  const copyLink = async (inv) => {
+    const slug = inv.slug;
+    const url = inviteUrl(slug, inv);
     try {
       await navigator.clipboard.writeText(url);
       setCopied(slug);
@@ -150,7 +151,7 @@ export default function HomePage() {
                     <div style={{ display: "flex", gap: 6, marginTop: "auto", flexWrap: "wrap" }}>
                       <Link to={`/edit/${inv.slug}`} style={iconLink(accent)} title="Редактировать"><Pencil size={14} /></Link>
                       <Link to={`/i/${inv.slug}`} target="_blank" style={iconLink(accent)} title="Открыть как гость"><Eye size={14} /></Link>
-                      <button onClick={() => copyLink(inv.slug)} style={{ ...iconBtn(accent), background: copied === inv.slug ? accent : "transparent",
+                      <button onClick={() => copyLink(inv)} style={{ ...iconBtn(accent), background: copied === inv.slug ? accent : "transparent",
                         color: copied === inv.slug ? "#fff" : accent }} title="Скопировать ссылку">
                         {copied === inv.slug ? <Check size={14} /> : <Share2 size={14} />}
                       </button>

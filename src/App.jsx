@@ -8,6 +8,7 @@ import LandingPage from "./LandingPage.jsx";
 import { LoginPage, RegisterPage } from "./AuthPages.jsx";
 import { AuthProvider, useAuth } from "./AuthContext.jsx";
 import { loadInvitation, genSlug } from "./storage.js";
+import { decodeInvite } from "./links.js";
 
 function NewInvitation() {
   const [slug] = useState(() => genSlug());
@@ -28,8 +29,13 @@ function EditInvitation() {
 
 function GuestInvitation() {
   const { slug } = useParams();
+  const loc = useLocation();
   const [initial, setInitial] = useState(undefined);
-  useEffect(() => { setInitial(loadInvitation(slug)); }, [slug]);
+  useEffect(() => {
+    // Prefer the self-contained payload from the URL (works on any device),
+    // then fall back to this browser's localStorage.
+    setInitial(decodeInvite(loc.search) || loadInvitation(slug) || null);
+  }, [slug, loc.search]);
   if (initial === undefined) return null;
   if (!initial) return <NotFound slug={slug} />;
   return <InvitationPortal slug={slug} initial={initial} guestMode />;
