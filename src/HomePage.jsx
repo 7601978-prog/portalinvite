@@ -13,7 +13,7 @@ const gradText = {
 
 const EVENT_LABEL = {
   wedding: "Свадьба", birthday: "День рождения", kids: "Детский праздник",
-  jubilee: "Юбилей", baby: "Baby Shower", housewarm: "Новоселье", corporate: "Корпоратив",
+  jubilee: "Юбилей", baby: "Гендер-пати", housewarm: "Новоселье", corporate: "Корпоратив",
 };
 
 const THEME_COLOR = {

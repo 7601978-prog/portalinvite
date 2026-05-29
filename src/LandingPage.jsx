@@ -24,7 +24,7 @@ const EVENT_TILES = [
   { icon: Cake,        label: "День рождения",    color: "#1f6f86" },
   { icon: PartyPopper, label: "Детский праздник", color: "#e08a2b" },
   { icon: GlassWater,  label: "Юбилей",           color: "#d4af6a" },
-  { icon: Baby,        label: "Baby Shower",      color: "#5c7a4f" },
+  { icon: Baby,        label: "Гендер-пати",      color: "#7a5cc4" },
   { icon: Home,        label: "Новоселье",        color: "#3fb98b" },
   { icon: Briefcase,   label: "Корпоратив",       color: "#7a5cc4" },
 ];
@@ -252,7 +252,7 @@ function SamplePreview() {
 }
 
 function LogoStrip() {
-  const tags = ["Свадьба", "День рождения", "Корпоратив", "Юбилей", "Baby Shower", "Новоселье"];
+  const tags = ["Свадьба", "День рождения", "Корпоратив", "Юбилей", "Гендер-пати", "Новоселье"];
   return (
     <div style={{ borderTop: `1px solid ${C.line}`, borderBottom: `1px solid ${C.line}`, background: C.panel,
       padding: "16px 24px" }}>
